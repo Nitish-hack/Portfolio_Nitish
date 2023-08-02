@@ -31,7 +31,7 @@ const Projects = () => {
             index={index}
             title={item.title}
             description={item.description}
-            thumbnail={item.thumbnail}
+            images={item.images}
             tech={item.tech}
             github={item.github}
             website={item.website}

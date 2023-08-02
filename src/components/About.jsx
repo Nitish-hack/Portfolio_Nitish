@@ -1,7 +1,8 @@
 import React,{useEffect} from 'react'
 import styled from "styled-components"
 import aboutgif from "../assets/images/about.gif"
-import {SiMui,SiCanva,SiReact,SiMongodb,SiTailwindcss,SiCss3,SiNodedotjs} from "react-icons/si"
+import {SiMui,SiCanva,SiReact,SiMongodb,SiCss3,SiNodedotjs} from "react-icons/si"
+import {TbBrandMysql} from "react-icons/tb"
 import {FaTerminal} from "react-icons/fa"
 import {TbApi} from "react-icons/tb"
 import AOS from "aos";
@@ -22,19 +23,19 @@ const About = () => {
     <br />
     <br />
 
-    Here are some of the technology that I love to work with
+    Here are some of the technologies that I love to work with:
     <br></br>
     <br></br>
     <SkillsContainer>
       <div className="skillcol">
         <div className="skill"><SiReact /> ReactJS</div>
         <div className="skill"><SiCss3 />CSS</div>
-        <div className="skill"><SiTailwindcss/>Tailwind CSS</div>
+        <div className="skill"><SiMui/>Material UI</div>
       </div>
       <div className="skillcol">
         <div className="skill"><SiMongodb />mongoDB</div>
         <div className="skill"><SiNodedotjs/>Node.js</div>
-        <div className="skill"><SiMui/>Material UI</div>
+        <div className="skill"><TbBrandMysql/>MySQL</div>
 
       </div>
       <div className="skillcol">
@@ -111,7 +112,7 @@ object-fit: contain;
 }
 `
 const SkillsContainer=styled.div`
-
+ 
 display:flex;
 justify-content:space-between;
 
@@ -120,5 +121,9 @@ justify-content:space-between;
   align-items:center;
   column-gap:10px;
    
+  @media screen and (max-width:450px){
+    column-gap:8px;
+    font-size:13px;
+  }
 }
 `

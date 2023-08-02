@@ -1,16 +1,24 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import AOS from "aos";
+import {BiLinkExternal} from "react-icons/bi";
 import "aos/dist/aos.css";
-const ProjectCard = ({ title, description, index,thumbnail, tech, github, website }) => {
+import Slider from "./Slider";
+const ProjectCard = ({ title, description, index,images, tech, github, website }) => {
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
   const isOddKey = index % 2 === 1;
+
   return (
     <CardContainer data-aos="zoom-in"  isOdd={isOddKey}>
-      <ImageContainer>
-      <img src={thumbnail} alt="project-img" />
+     
+ 
+      <ImageContainer> 
+
+     <Slider images={images} />
+     
+ 
       </ImageContainer>
       <ContentContainer  isOdd={isOddKey}>
         <div className="title">{title}</div>
@@ -22,10 +30,10 @@ const ProjectCard = ({ title, description, index,thumbnail, tech, github, websit
         </div>
         <div className="links">
           <a href={github} target="_blank" rel="noopener noreferrer">
-            Code
+            View Code
           </a>
           <a href={website} target="_blank" rel="noopener noreferrer">
-            Demo
+            Visit Site <BiLinkExternal />
           </a>
         </div>
       </ContentContainer>
@@ -105,8 +113,11 @@ const ContentContainer = styled.div`
     padding:2px 10px ;
     border-radius:15px;
     border:1px solid #00ffff;
-    letter-spacing:2px;
-    font-size:17px;
+    font-size:15px;
+
+    svg{
+      margin-bottom:-2px;
+    }
     }
   }
 
@@ -147,6 +158,12 @@ img{
       border-top-right-radius: 20px;
       height: auto;
     }
+
+  .thumbs {
+    img{
+      border-radius:0;
+    }
+  }
 }
 
 `;
